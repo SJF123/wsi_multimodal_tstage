@@ -1,0 +1,12 @@
+{
+  "main": ["ours"],
+  "table2_multimodal": ["concat", "late_fusion", "gated_fusion", "res_mlp_only", "alignment_linear", "ours"],
+  "table3_ablation": ["F0", "N1", "N2", "N3", "N4", "N5", "R1", "R2", "D1", "D2"],
+  "alias_notes": {"D2": "Same architecture as N1; reuse N1 predictions and results rather than run separately", "F0": "Same architecture as ours; reuse ours predictions and results"},
+  "table2_image_methods": {
+    "resnet50_mean": {"pooling": "mean", "input_dim": 2048, "source": "ResNet50 external pretrained patch features"},
+    "dino_mean": {"pooling": "mean", "input_dim": 384, "source": "DINO ViT-S/16 pretrained patch features"},
+    "uni_attention": {"pooling": "attention", "input_dim": "get from actual UNI checkpoint", "source": "Official UNI image encoder"},
+    "conch_attention": {"pooling": "attention", "input_dim": "get from actual CONCH checkpoint", "source": "Official CONCH image encoder"}
+  }
+}
